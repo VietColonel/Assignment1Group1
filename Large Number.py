@@ -13,7 +13,7 @@ def menu(a,b,c):
         c4 = 0 #biến để nhớ phép cộng hàng đon vị. Nếu lớn hơn 10 thì bằng 1. Nhỏ hơn 10 thì bằng 0
         while c1 >= 0 :
             c3 = int(a[c1]) + int(b[c1]) + c4 #c3 là biến lưu giữ giá trị phép cộng hàng đơn vị
-            if c3 >= 10 and c1 != 0: #trường hợp a và b = 5**** thì 5 + 5 = 10 >= 10 sẽ gây lỗi tới phép tính
+            if c3 >= 10 and c1 != 0: #trong trường hợp a và b = 5**** thì 5 + 5 = 10 >= 10 sẽ gây lỗi tới phép tính
                 c4 = 1
                 c3 = str(c3%10)
             elif c1 == 0 : #ở đây giả sử đã chạy tới chữ số đầu tiên thì cộng vào luôn tổng cuối cùng
@@ -46,22 +46,22 @@ def menu(a,b,c):
             minus = c3 + minus
             c1 -= 1
         return minus
-
+#phép nhân
     def mul(a,b):
         c1 = len(b)-1
-        c2 = 0
-        keep1 = '0'
+        c2 = 0 #biến để khi a nhân hàng đơn vị hay hàng chục ... của b thì thêm bấy nhiêu số 0 sau phép nhân đó
+        keep1 = '0' #keep1 là biến để tính phép nhân cuối cùng
         while c1 >= 0 :
-            x = 0
-            keep = '0'
-            while x < int(b[c1]):
-                keep =  add(keep,a)
+            x = 0 
+            keep = '0' #biến để lưu trữ kết quả của phép nhân a với hàng đơn vị, hàng chục ...
+            while x < int(b[c1]): #lặp phép cộng chính a theo giá trị 1 hàng (đơn vị) của b
+                keep =  add(keep,a) 
                 x += 1
-            if x == 0 :
+            if x == 0 : #nếu không thực hiện vòng lặp thì đây là phép nhân với 0
                 keep = '0'
             else :
-                keep = keep + '0'*c2
-            keep1 = add(keep1,keep) 
+                keep = keep + '0'*c2 #kết quả nhân với 10 ^ c2
+            keep1 = add(keep1,keep) #cộng các phép nhân nhỏ để ra giá trị của phép nhân lớn
             c1 -= 1
             c2 += 1
         return keep1
