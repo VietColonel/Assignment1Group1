@@ -13,7 +13,7 @@ def menu(a,b,c):
         c4 = 0 #biến để nhớ phép cộng hàng đon vị. Nếu lớn hơn 10 thì bằng 1. Nhỏ hơn 10 thì bằng 0
         while c1 >= 0 :
             c3 = int(a[c1]) + int(b[c1]) + c4 #c3 là biến lưu giữ giá trị phép cộng hàng đơn vị
-            if c3 >= 10 and c1 != 0: #trong trường hợp a và b = 5**** thì 5 + 5 = 10 >= 10 sẽ gây lỗi tới phép tính
+            if c3 >= 10 and c1 != 0: #giả sử trường hợp a và b = 5**** thì 5 + 5 = 10 >= 10 sẽ gây lỗi tới phép tính
                 c4 = 1
                 c3 = str(c3%10)
             elif c1 == 0 : #ở đây giả sử đã chạy tới chữ số đầu tiên thì cộng vào luôn tổng cuối cùng
